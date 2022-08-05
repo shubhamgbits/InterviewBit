@@ -2,7 +2,7 @@ package LinkedList;
 
 import java.util.HashMap;
 
-public class RemoveDuplicates {
+public class P1_RemoveDuplicates {
 
 	public static void main(String[] args) {
 		Node n1= new Node(10, null);
@@ -24,7 +24,7 @@ public class RemoveDuplicates {
 		n1.printLL(n1);
 		
 		System.out.println("\nAfter removing duplicates");
-		RemoveDuplicates rd=new RemoveDuplicates();
+		P1_RemoveDuplicates rd=new P1_RemoveDuplicates();
 		rd.removeDup(n1);
 		n1.printLL(n1);
 		
