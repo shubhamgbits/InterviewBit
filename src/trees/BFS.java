@@ -13,14 +13,14 @@ public class BFS {
 	 * 4. Add left & right Node to the queue
 	 */
 	
-	public static void traverse(Node root) {
-		Queue<Node> queue = new ArrayDeque<>();
+	public static void traverse(TreeNode root) {
+		Queue<TreeNode> queue = new ArrayDeque<>();
 		//Step 1:
 		queue.add(root);
 		
 		while(!queue.isEmpty()) {
 			//Step 2: Get current Node
-			Node current = queue.poll();
+			TreeNode current = queue.poll();
 			
 			//Step 3: Print the current Node
 			System.out.print(current.getData()+" ");

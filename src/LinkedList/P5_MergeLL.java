@@ -3,25 +3,53 @@ package LinkedList;
 public class P5_MergeLL {
 	
 	//Without extra space 
-	public Node merge(Node head1, Node head2) {
-
+	public static Node merge(Node head1, Node head2) {
+				
+		Node root = head1.getData()<head2.getData()?head1:head2;
+		Node previous=root;
 		
-		while(head1.getNext()!=null || head2.getNext()!=null) {
+/*
+ * 	This is the case if second list has smaller nodes initially.We traverse it till its bigger node comes. 
+ * 	Since by default we make head1 as our final list. 
+ */
+		if(head2.getData()<=head1.getData()) {
+			while(head1!=null && head2!=null && head2.getData()<=head1.getData()) {
+				previous=head2;
+				head2=head2.getNext();			
+			}
+			previous.setNext(head1);
+		}		
+/*
+ * This loop works only when head2 1st node is smaller than head1 1st Node
+ */
+		while(head1!=null && head2!=null) {
+//			System.out.println("Previous@ "+previous.getData());
+//			System.out.println("head1@ "+head1.getData());
+//			System.out.println("head2@ "+head2.getData());
 			
-			if(head1.getData()<=head2.getData()) {
+			if(head1.getData()<head2.getData()) {
+				previous=head1;
 				head1=head1.getNext();
 			}
 			
-			else {
-				Node temp = head1.getNext();
-				head1.setNext(head2);
+			else {				
+				Node nextNodeofLL2 = head2.getNext();
 				
-				head2 = head2.getNext();
-				head1.getNext().setNext(temp);
-			}
-			head1
+				previous.setNext(head2);
+				head2.setNext(head1);
+				previous=head2;
+				
+				head2 = nextNodeofLL2;				
+			}			
+		}
+
+/*
+ * Case when our head1 list contains less elements.
+ */
+		if(head1==null && head2!=null) {
+			previous.setNext(head2);
 		}
 		
-		return head1; 
+		return root; 
 	}
 }

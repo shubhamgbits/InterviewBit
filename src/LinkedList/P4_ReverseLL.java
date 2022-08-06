@@ -6,8 +6,8 @@ import java.util.Collections;
 public class P4_ReverseLL {
 	
 	//M1: using ArrayList
-	//M2: using recursion
-	//M3: Iterative using 3 pointers
+	//M2: using recursion - TRY
+	//M3: Iterative using 2 pointers
 	public static Node reverse(Node head) {
 		ArrayList<Integer> list = new ArrayList<>();
 		
@@ -27,6 +27,20 @@ public class P4_ReverseLL {
 		}
 		
 		return head;
+	}
+	
+	public static Node reverseWithoutSpace(Node head) {
+		
+		Node previous = null;
+		Node current = head;
+		
+		while(current!=null) {
+			Node temp = current.getNext();
+			current.setNext(previous);
+			previous=current;
+			current = temp;
+		}		
+		return previous;
 	}
 	
 	public static Node recursion(Node head) {

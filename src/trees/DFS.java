@@ -2,7 +2,7 @@ package trees;
 
 public class DFS {
 
-	public static void preOrder(Node node) {
+	public static void preOrder(TreeNode node) {
 		if(node!=null) {
 			
 			System.out.print(node.getData()+" ");
@@ -12,7 +12,7 @@ public class DFS {
 		}
 	}
 	
-	public static void inOrder(Node node) {
+	public static void inOrder(TreeNode node) {
 		if(node!=null) {
 			
 			inOrder(node.getLeft());
@@ -23,7 +23,7 @@ public class DFS {
 		}
 	}
 	
-	public static void postOrder(Node node) {
+	public static void postOrder(TreeNode node) {
 		if(node!=null) {
 			
 			postOrder(node.getLeft());			

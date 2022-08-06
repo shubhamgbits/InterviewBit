@@ -2,24 +2,23 @@ package LinkedList;
 
 public class P_MainClass {
 	public static void main(String[] args) {
-		Node n1= new Node(10, null);
-		Node n2= new Node(20, null);
-		Node n3= new Node(30, null);
-		Node n4= new Node(40, null);
-		Node n5= new Node(50, null);
-		Node n6= new Node(60, null);
+		Node A4= new Node(9, null);
+		Node A3= new Node(9, A4);
+		Node A2= new Node(9, A3);
+		Node A1= new Node(9, A2);
 		
-		n1.setNext(n2);
-		n2.setNext(n3);
-		n3.setNext(n4);
-		n4.setNext(n5);
-		n5.setNext(n6);
+		Node B7= new Node(9, null);
+		Node B6= new Node(9, B7);
+		Node B5= new Node(9, B6);
+		Node B4= new Node(9, B5);
+		Node B3= new Node(9, B4);
+		Node B2 = new Node(9, B3);
+		Node B1 = new Node(9, B2);
 		
-		//Node n = P2_DetectLoop.findLoop(n1);
-		//P2_DetectLoop.floydCycle(n1);
+	
 		
-		n1.printLL(P4_ReverseLL.reverse(n1));
-		System.out.println(P3_PalindromeCheck.check(n1));
+		Node result = P6_IntegerSum.solve(A1, B1);
+		A1.printLL(result);
 		
 		
 	}

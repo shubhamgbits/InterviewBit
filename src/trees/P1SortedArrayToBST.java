@@ -24,15 +24,15 @@ public class P1SortedArrayToBST {
 	}
 	
 	
-	public static Node solve(ArrayList<Integer> list) {
+	public static TreeNode solve(ArrayList<Integer> list) {
 		
 		if(list.size()==1) //When list size = 1 just return the Node
-			return new Node(list.get(0));
+			return new TreeNode(list.get(0));
 		
 	
 		int mid = (list.size()-1)/2;
 		//System.out.println("mid: "+list.get(mid));
-		Node element = new Node(list.get(mid));
+		TreeNode element = new TreeNode(list.get(mid));
 		
 		ArrayList<Integer> left = new ArrayList<Integer>(list.subList(0, mid));
 		//System.out.println("left array:"+left);

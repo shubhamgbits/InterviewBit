@@ -22,7 +22,7 @@ import java.util.Queue;
 
 
 public class MainClassTraverse {
-	static Node a1, b1, b2, c1, c2, c3, d1, d2, d3, d4;
+	static TreeNode a1, b1, b2, c1, c2, c3, d1, d2, d3, d4;
 	
 	
 	public static void main(String[] args) {
@@ -46,24 +46,23 @@ public class MainClassTraverse {
 	}
 	
 	public static void init() {
-		a1 = new Node(50);
-		b1 = new Node(45);
-		b2 = new Node(68);
-		c1 = new Node(46);
-		c2 = new Node(43);
-		c3 = new Node(62);
-		d1 = new Node(6);
-		d2 = new Node(49);
-		d3 = new Node(65);
-		d4 = new Node(71);
 		
-		a1.setLeft(b1); a1.setRight(b2);
-		b1.setLeft(c1); b1.setRight(c2);
-		b2.setRight(c3);
-		c1.setLeft(d1);
-		c2.setRight(d2);
-		c3.setLeft(d3);
-		c3.setRight(d4);
+		d4 = new TreeNode(71);
+		d3 = new TreeNode(65);
+		d2 = new TreeNode(49);
+		d1 = new TreeNode(6);
+		
+		c3 = new TreeNode(62, d3, d4);
+		c2 = new TreeNode(43, null, d2);
+		c1 = new TreeNode(46, d1, null);
+		
+		b2 = new TreeNode(68, null, c3);
+		b1 = new TreeNode(45, c1, c2);
+		
+		a1 = new TreeNode(50, b1, b2);
+		
+		
+		
 		
 		//System.out.println("init done");
 	}
