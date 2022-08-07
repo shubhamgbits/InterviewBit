@@ -1,8 +1,5 @@
 package trees;
 
-import java.util.ArrayDeque;
-import java.util.Queue;
-
 /*
  * 						50	
  * 				    /        \
@@ -22,33 +19,25 @@ import java.util.Queue;
 
 
 public class MainClassTraverse {
-	static TreeNode a1, b1, b2, c1, c2, c3, d1, d2, d3, d4;
+	static TreeNode a1, b1, b2, c1, c2, c3, d1, d2, d3, d4, e1;
 	
 	
 	public static void main(String[] args) {
 		init();
 		
-		//BFS 
-		System.out.print("BFS:  ");
-		BFS.traverse(a1); System.out.println();
+		//System.out.println(P3_CheckSubtree.check(c3, a1));
 		
-		//Pre-order
-		System.out.print("Pre:  ");
-		DFS.preOrder(a1); System.out.println();
+		boolean a =false;
+		boolean b=false;
 		
-		//In-order
-		System.out.print("In:   ");
-		DFS.inOrder(a1); System.out.println();
-		
-		//Post-order
-		System.out.print("Post: ");
-		DFS.postOrder(a1);
+		System.out.println(a || b);
 	}
 	
 	public static void init() {
+		e1 = new TreeNode(5);
 		
 		d4 = new TreeNode(71);
-		d3 = new TreeNode(65);
+		d3 = new TreeNode(65, null, e1);
 		d2 = new TreeNode(49);
 		d1 = new TreeNode(6);
 		
